@@ -8,10 +8,7 @@ target 'rndemo' do
 
   use_react_native!(:path => config["reactNativePath"])
 
-  target 'rndemoTests' do
-    inherit! :complete
-    # Pods for testing
-  end
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
   # Enables Flipper.
   #
@@ -23,11 +20,4 @@ target 'rndemo' do
   end
 end
 
-target 'rndemo-tvOS' do
-  # Pods for rndemo-tvOS
 
-  target 'rndemo-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-end
