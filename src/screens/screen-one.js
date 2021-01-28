@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Text, View, LayoutAnimation } from 'react-native';
 import { Button } from 'react-native-elements';
+
 const ScreenOne = () => {
   const [buttonPressed, setButtonPress] = useState(false);
   return (
