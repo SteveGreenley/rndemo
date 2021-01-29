@@ -11,7 +11,9 @@ const ScreenOne = () => {
         justifyContent: buttonPressed ? 'center' : 'space-around'
       }}
     >
-      <View>
+      <View
+        style={styles.content}
+      >
         <Text>Hello this is the first screen</Text>
       </View>
       <Button
@@ -31,6 +33,12 @@ const styles = {
     justifyContent: 'space-around',
     alignItems: 'center',
   },
+  content: {
+    backgroundColor: 'hotpink',
+    padding: 30,
+    margin: 10,
+    borderRadius: 10
+  }
 };
 
 export default ScreenOne;
