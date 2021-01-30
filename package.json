@@ -21,7 +21,8 @@
     "react-native-vector-icons": "^8.0.0",
     "react-navigation": "^4.4.3",
     "react-navigation-stack": "^2.10.2",
-    "react-navigation-tabs": "^2.10.1"
+    "react-navigation-tabs": "^2.10.1",
+    "tic-tac-toe-ai-engine": "^1.0.9"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",

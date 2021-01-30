@@ -8,7 +8,7 @@ const ScreenOne = () => {
     <View
       style={{
         ...styles.container,
-        justifyContent: buttonPressed ? 'center' : 'space-around'
+        flexDirection: buttonPressed ? 'column' : 'column-reverse'
       }}
     >
       <View
@@ -19,7 +19,7 @@ const ScreenOne = () => {
       <Button
         title="Press me!"
         onPress={()=>{
-          LayoutAnimation.configureNext(LayoutAnimation.Presets.spring);
+          LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
           setButtonPress(!buttonPressed);
         }}
       />
