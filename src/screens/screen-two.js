@@ -1,31 +1,35 @@
 import React, { useState } from 'react';
 import { Text, View } from 'react-native';
 import { Button } from 'react-native-elements';
+import FocusAwareStatusBar from '../components/focus-aware-status-bar';
 
 const ScreenTwo = () => {
   const [joke, setJoke] = useState('Press the button to get a Chuck Norris joke');
   return (
-    <View style={styles.container}>
-      <View
-        style={styles.content}
-      >
-        <Text
-          style={styles.jokeText}
+    <>
+      <FocusAwareStatusBar barStyle="dark-content" />
+      <View style={styles.container}>
+        <View
+          style={styles.content}
         >
-          {joke}
-        </Text>
+          <Text
+            style={styles.jokeText}
+          >
+            {joke}
+          </Text>
+        </View>
+        <Button
+          title="Get a joke!"
+          onPress={async ()=> {
+            setJoke('Here it comes...');
+            const response = await fetch('https://api.chucknorris.io/jokes/random');
+            const json = await response.json();
+            const newJoke = json.value;
+            setJoke(newJoke);
+          }}
+        />
       </View>
-      <Button
-        title="Get a joke!"
-        onPress={async ()=> {
-          setJoke('Here it comes...');
-          const response = await fetch('https://api.chucknorris.io/jokes/random');
-          const json = await response.json();
-          const newJoke = json.value;
-          setJoke(newJoke);
-        }}
-      />
-    </View>
+    </>
   );
 };
 

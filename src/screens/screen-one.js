@@ -1,29 +1,33 @@
 import React, { useState } from 'react';
 import { Text, View, LayoutAnimation } from 'react-native';
 import { Button } from 'react-native-elements';
+import FocusAwareStatusBar from '../components/focus-aware-status-bar';
 
 const ScreenOne = () => {
   const [buttonPressed, setButtonPress] = useState(false);
   return (
-    <View
-      style={{
-        ...styles.container,
-        flexDirection: buttonPressed ? 'column' : 'column-reverse'
-      }}
-    >
+    <>
+      <FocusAwareStatusBar barStyle="dark-content" />
       <View
-        style={styles.content}
-      >
-        <Text>Hello this is the first screen</Text>
-      </View>
-      <Button
-        title="Press me!"
-        onPress={()=>{
-          LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
-          setButtonPress(!buttonPressed);
+        style={{
+          ...styles.container,
+          flexDirection: buttonPressed ? 'column' : 'column-reverse'
         }}
-      />
-    </View>
+      >
+        <View
+          style={styles.content}
+        >
+          <Text>Hello this is the first screen</Text>
+        </View>
+        <Button
+          title="Press me!"
+          onPress={()=>{
+            LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+            setButtonPress(!buttonPressed);
+          }}
+        />
+      </View>
+    </>
   );
 };
 
