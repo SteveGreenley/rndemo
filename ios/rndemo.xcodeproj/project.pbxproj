@@ -27,6 +27,7 @@
 		A616465325CA8B8000D6D22F /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A616464325CA8B8000D6D22F /* EvilIcons.ttf */; };
 		A616465425CA8B8000D6D22F /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A616464425CA8B8000D6D22F /* SimpleLineIcons.ttf */; };
 		A616465525CA8B8000D6D22F /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A616464525CA8B8000D6D22F /* MaterialIcons.ttf */; };
+		A684E3D025CC06A10084A671 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A684E3CF25CC06A10084A671 /* GoogleMaps.bundle */; };
 		E63F4AB4B314C876EBCA2B42 /* libPods-rndemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA7434184F1D3F9A85AB62A /* libPods-rndemo.a */; };
 /* End PBXBuildFile section */
 
@@ -41,11 +42,7 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = rndemo/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = rndemo/main.m; sourceTree = "<group>"; };
 		359E0E4B6184D17EF7ACA866 /* Pods-rndemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rndemo.release.xcconfig"; path = "Target Support Files/Pods-rndemo/Pods-rndemo.release.xcconfig"; sourceTree = "<group>"; };
-		4087C80C2A4F53FFF861345D /* libPods-rndemo-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rndemo-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		52F2701C06F47E2E22C2894A /* Pods-rndemo-rndemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rndemo-rndemoTests.release.xcconfig"; path = "Target Support Files/Pods-rndemo-rndemoTests/Pods-rndemo-rndemoTests.release.xcconfig"; sourceTree = "<group>"; };
-		71CF2038F43D49BEA7F2C32A /* Pods-rndemo-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rndemo-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-rndemo-tvOS/Pods-rndemo-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = rndemo/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		83AB417D4525C41F1ED69F67 /* libPods-rndemo-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rndemo-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A616463625CA8B8000D6D22F /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fontisto.ttf; sourceTree = "<group>"; };
 		A616463725CA8B8000D6D22F /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
 		A616463825CA8B8000D6D22F /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Feather.ttf; sourceTree = "<group>"; };
@@ -62,15 +59,11 @@
 		A616464325CA8B8000D6D22F /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
 		A616464425CA8B8000D6D22F /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
 		A616464525CA8B8000D6D22F /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
-		B1EEA3CEFB2058CEF0CBC60F /* Pods-rndemo-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rndemo-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-rndemo-tvOSTests/Pods-rndemo-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A684E3CF25CC06A10084A671 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Pods/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		CDA7434184F1D3F9A85AB62A /* libPods-rndemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rndemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DD009551F3871D7E08BE9192 /* Pods-rndemo-rndemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rndemo-rndemoTests.debug.xcconfig"; path = "Target Support Files/Pods-rndemo-rndemoTests/Pods-rndemo-rndemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E0F5D97D4E7862FECB9BA0B3 /* Pods-rndemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rndemo.debug.xcconfig"; path = "Target Support Files/Pods-rndemo/Pods-rndemo.debug.xcconfig"; sourceTree = "<group>"; };
-		E6E467E9C68E1830FBBE7ECA /* Pods-rndemo-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rndemo-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-rndemo-tvOSTests/Pods-rndemo-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		EE0549E313D5C77DAF5F622D /* Pods-rndemo-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rndemo-tvOS.release.xcconfig"; path = "Target Support Files/Pods-rndemo-tvOS/Pods-rndemo-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		EF3CB8CFF34FC722731885CF /* libPods-rndemo-rndemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rndemo-rndemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,12 +112,10 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A684E3CF25CC06A10084A671 /* GoogleMaps.bundle */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				CDA7434184F1D3F9A85AB62A /* libPods-rndemo.a */,
-				EF3CB8CFF34FC722731885CF /* libPods-rndemo-rndemoTests.a */,
-				83AB417D4525C41F1ED69F67 /* libPods-rndemo-tvOS.a */,
-				4087C80C2A4F53FFF861345D /* libPods-rndemo-tvOSTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -134,12 +125,6 @@
 			children = (
 				E0F5D97D4E7862FECB9BA0B3 /* Pods-rndemo.debug.xcconfig */,
 				359E0E4B6184D17EF7ACA866 /* Pods-rndemo.release.xcconfig */,
-				DD009551F3871D7E08BE9192 /* Pods-rndemo-rndemoTests.debug.xcconfig */,
-				52F2701C06F47E2E22C2894A /* Pods-rndemo-rndemoTests.release.xcconfig */,
-				71CF2038F43D49BEA7F2C32A /* Pods-rndemo-tvOS.debug.xcconfig */,
-				EE0549E313D5C77DAF5F622D /* Pods-rndemo-tvOS.release.xcconfig */,
-				B1EEA3CEFB2058CEF0CBC60F /* Pods-rndemo-tvOSTests.debug.xcconfig */,
-				E6E467E9C68E1830FBBE7ECA /* Pods-rndemo-tvOSTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -270,6 +255,7 @@
 				A616464625CA8B8000D6D22F /* Fontisto.ttf in Resources */,
 				A616465125CA8B8000D6D22F /* FontAwesome.ttf in Resources */,
 				A616464D25CA8B8000D6D22F /* Foundation.ttf in Resources */,
+				A684E3D025CC06A10084A671 /* GoogleMaps.bundle in Resources */,
 				A616465025CA8B8000D6D22F /* FontAwesome5_Regular.ttf in Resources */,
 				A616464E25CA8B8000D6D22F /* Ionicons.ttf in Resources */,
 				A616465325CA8B8000D6D22F /* EvilIcons.ttf in Resources */,
@@ -312,6 +298,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-rndemo/Pods-rndemo-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
@@ -332,6 +319,7 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",

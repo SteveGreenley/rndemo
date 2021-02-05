@@ -3,7 +3,7 @@ import { Text, View } from 'react-native';
 import { Button } from 'react-native-elements';
 import FocusAwareStatusBar from '../components/focus-aware-status-bar';
 
-const ScreenTwo = () => {
+const ChuckNorrisScreen = () => {
   const [joke, setJoke] = useState('Press the button to get a Chuck Norris joke');
   return (
     <>
@@ -47,4 +47,4 @@ const styles = {
   }
 };
 
-export default ScreenTwo;
+export default ChuckNorrisScreen;

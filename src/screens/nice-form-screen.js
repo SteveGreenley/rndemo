@@ -8,7 +8,7 @@ const HEADER_MAX_HEIGHT = 200;
 const HEADER_MIN_HEIGHT = 60;
 const HEADER_SCROLL_DISTANCE = HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT;
 
-const ScreenFour = ({ navigation }) => {
+const NiceFormScreen = ({ navigation }) => {
   const [scrollY] = useState(new Animated.Value(0));
   const headerHeight = scrollY.interpolate({
     inputRange: [0, HEADER_SCROLL_DISTANCE],
@@ -116,4 +116,4 @@ const styles = {
   }
 };
 
-export default ScreenFour;
+export default NiceFormScreen;

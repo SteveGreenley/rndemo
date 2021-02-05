@@ -3,7 +3,7 @@ import { Text, View, LayoutAnimation } from 'react-native';
 import { Button } from 'react-native-elements';
 import FocusAwareStatusBar from '../components/focus-aware-status-bar';
 
-const ScreenOne = () => {
+const SimpleAnimationScreen = () => {
   const [buttonPressed, setButtonPress] = useState(false);
   return (
     <>
@@ -45,4 +45,4 @@ const styles = {
   }
 };
 
-export default ScreenOne;
+export default SimpleAnimationScreen;

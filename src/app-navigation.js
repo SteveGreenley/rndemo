@@ -2,15 +2,16 @@ import React from 'react';
 import { createAppContainer } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { Icon } from 'react-native-elements';
-import ScreenOne from './screens/screen-one';
-import ScreenTwo from './screens/screen-two';
-import ScreenThree from './screens/screen-three';
-import ScreenFour from './screens/screen-four';
+import SimpleAnimationScreen from './screens/simple-animation-screen';
+import ChuckNorrisScreen from './screens/chuck-norris-screen';
+import TicTacToeScreen from './screens/tic-tac-toe-screen';
+import NiceFormScreen from './screens/nice-form-screen';
+import MapScreen from './screens/map-screen';
 
 
 const TabNavigator = createBottomTabNavigator({
-  'Simple Animation': {
-    screen: ScreenOne,
+  'Animation': {
+    screen: SimpleAnimationScreen,
     navigationOptions: {
       tabBarIcon: ({ tintColor }) => (
         <Icon name="movie-open" color={tintColor} type="material-community"/>
@@ -18,7 +19,7 @@ const TabNavigator = createBottomTabNavigator({
     }
   },
   'Chuck Norris': {
-    screen: ScreenTwo,
+    screen: ChuckNorrisScreen,
     navigationOptions: {
       tabBarIcon: ({ tintColor }) => (
         <Icon name="api" color={tintColor} type="material-community"/>
@@ -26,7 +27,7 @@ const TabNavigator = createBottomTabNavigator({
     }
   },
   'Tic Tac Toe': {
-    screen: ScreenThree,
+    screen: TicTacToeScreen,
     navigationOptions: {
       tabBarIcon: ({ tintColor }) => (
         <Icon name="nintendo-game-boy" color={tintColor} type="material-community"/>
@@ -34,10 +35,18 @@ const TabNavigator = createBottomTabNavigator({
     }
   },
   'Form': {
-    screen: ScreenFour,
+    screen: NiceFormScreen,
     navigationOptions: {
       tabBarIcon: ({ tintColor }) => (
         <Icon name="form" color={tintColor} type="ant-design"/>
+      )
+    }
+  },
+  'Map': {
+    screen: MapScreen,
+    navigationOptions: {
+      tabBarIcon: ({ tintColor }) => (
+        <Icon name="world-o" color={tintColor} type="fontisto"/>
       )
     }
   },

@@ -11,7 +11,7 @@ const { width, height } = Dimensions.get('window');
 const boardSize = Math.min(width, height) - 40;
 const blankBoard = ['','','','','','','','',''];
 
-const ScreenThree = () => {
+const TicTacToeScreen = () => {
   const [board, setBoard] = useState(blankBoard);
   const [winner, setWinner] = useState('');
   const [depth, setDepth] = useState(0);
@@ -107,4 +107,4 @@ const styles = {
   }
 };
 
-export default ScreenThree;
+export default TicTacToeScreen;
