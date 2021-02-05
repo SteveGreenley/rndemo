@@ -2,16 +2,20 @@ import React from 'react';
 import MapView from 'react-native-maps';
 import FocusAwareStatusBar from '../components/focus-aware-status-bar';
 
+const mapStyle = require('../../assets/custom-map-style.json');
+
 const MapScreen = () => {
   return (
     <>
       <FocusAwareStatusBar barStyle="dark-content" />
       <MapView
+        provider="google"
         style={styles.container}
         showsUserLocation
         showsScale
         showsCompass
-
+        showsMyLocationButton
+        customMapStyle={mapStyle}
       />
     </>
   );
