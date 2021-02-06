@@ -29,7 +29,7 @@ static void InitializeFlipper(UIApplication *application) {
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  NSString *googleMapsApiKey = [ReactNativeConfig envFor:@"GOOGLE_MAPS_API_KEY"];
+  NSString *googleMapsApiKey = [ReactNativeConfig envFor:@"GOOGLE_MAPS_IOS_API_KEY"];
   [GMSServices provideAPIKey:googleMapsApiKey];
 #ifdef FB_SONARKIT_ENABLED
   InitializeFlipper(application);

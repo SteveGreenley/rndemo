@@ -130,7 +130,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.rndemo"
+        applicationId "nz.co.swiftlymobile.rndemo"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

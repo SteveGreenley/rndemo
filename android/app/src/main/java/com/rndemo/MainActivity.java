@@ -1,4 +1,4 @@
-package com.rndemo;
+package nz.co.swiftlymobile.rndemo;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

@@ -1,4 +1,4 @@
-package com.rndemo;
+package nz.co.swiftlymobile.rndemo;
 
 import android.app.Application;
 import android.content.Context;
