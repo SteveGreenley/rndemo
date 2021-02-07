@@ -17,7 +17,8 @@ module.exports = {
     "promise/avoid-new": "off",
     "react/display-name": "off",
     "global-require": "off",
-    "indent": ["warn", 2],
-    "object-curly-spacing": ["warn", "always"]
+    "indent": ["error", 2],
+    "object-curly-spacing": ["warn", "always"],
+    "brace-style": ["error", "1tbs", { "allowSingleLine": true }]
   },
 };

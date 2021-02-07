@@ -18,7 +18,7 @@ const calcRotation = ({ x,y,z }) => {
 
 const CameraScreen = () => {
   const [cameraPermission, setCameraPermission] = useState(false);
-  const [accelerometerValues, setAccelerometerValues] = useState(null);
+  const [, setAccelerometerValues] = useState(null);
   const [rotationValues, setRotationValues] = useState(null);
   const cameraRef = useRef();
   useEffect(()=>{
