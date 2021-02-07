@@ -5,15 +5,39 @@ import FocusAwareStatusBar from '../components/focus-aware-status-bar';
 import { RNCamera } from 'react-native-camera';
 import Permissions from 'react-native-permissions';
 import CameraRoll from '@react-native-community/cameraroll';
+import { accelerometer } from 'react-native-sensors';
+
+const dp = n => Math.round(n);
+
+const calcRotation = ({ x,y,z }) => {
+  const pitch = Math.atan2(-x, -z) * 180 / Math.PI;// In degrees
+  const roll = Math.atan2(-y, -x) * 180 / Math.PI;// In degrees
+  const yaw = Math.atan2(y, -z) * 180 / Math.PI;// In degrees
+  return { pitch, roll, yaw };
+};
 
 const CameraScreen = () => {
   const [cameraPermission, setCameraPermission] = useState(false);
+  const [accelerometerValues, setAccelerometerValues] = useState(null);
+  const [rotationValues, setRotationValues] = useState(null);
   const cameraRef = useRef();
   useEffect(()=>{
     Permissions.request('camera', { type: 'always' }).then(response => {
       setCameraPermission(true);
     });
-  });
+  },[]);
+  useEffect(()=>{
+    //console.log('mount');
+    const accelerometerSubscription = accelerometer.subscribe(({ x,y,z })=> {
+      //console.log('x=',x, 'y=',y, 'z=',z);
+      setAccelerometerValues({ x,y,z });
+      setRotationValues(calcRotation({ x,y,z }));
+    });
+    return ()=>{
+      //console.log('unmount');
+      accelerometerSubscription.unsubscribe();
+    };
+  },[]);
   return (
     <>
       <FocusAwareStatusBar barStyle="light-content" />
@@ -41,6 +65,13 @@ const CameraScreen = () => {
         <View
           style={styles.overlay}
         >
+          {rotationValues && (
+            <>
+              <Text style={{ color:'white' }}>{`pitch=${dp(rotationValues.pitch)}`}</Text>
+              <Text style={{ color:'white' }}>{`roll=${dp(rotationValues.roll)}`}</Text>
+              <Text style={{ color:'white' }}>{`yaw=${dp(rotationValues.yaw)}`}</Text>
+            </>
+          )}
           <Button
             title="Take a photo"
             icon={{ name: 'camera', color: 'white' }}
