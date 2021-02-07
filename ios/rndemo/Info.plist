@@ -37,6 +37,12 @@
 			</dict>
 		</dict>
 	</dict>
+<key>NSPhotoLibraryUsageDescription</key>
+<string>With your permission, we can access your photo library</string>
+<key>NSPhotoLibraryAddUsageDescription</key>
+<string>With your permission, we can save a photo your your photo library</string>
+<key>NSCameraUsageDescription</key>
+<string>With your permission, we can take photographs.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>This app shows your location on a map</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
@@ -60,12 +66,20 @@
 		<string>Zocial.ttf</string>
 		<string>Fontisto.ttf</string>
 	</array>
+<key>UIApplicationSceneManifest</key>
+<dict>
+	<key>UIApplicationSupportsMultipleScenes</key>
+	<false/>
+</dict>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
 	</array>
+<key>UIRequiresFullScreen</key>
+<true/>
+
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

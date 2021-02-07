@@ -7,6 +7,7 @@ import ChuckNorrisScreen from './screens/chuck-norris-screen';
 import TicTacToeScreen from './screens/tic-tac-toe-screen';
 import NiceFormScreen from './screens/nice-form-screen';
 import MapScreen from './screens/map-screen';
+import CameraScreen from './screens/camera-screen';
 
 
 const TabNavigator = createBottomTabNavigator({
@@ -47,6 +48,14 @@ const TabNavigator = createBottomTabNavigator({
     navigationOptions: {
       tabBarIcon: ({ tintColor }) => (
         <Icon name="world-o" color={tintColor} type="fontisto"/>
+      )
+    }
+  },
+  'Camera': {
+    screen: CameraScreen,
+    navigationOptions: {
+      tabBarIcon: ({ tintColor }) => (
+        <Icon name="camera" color={tintColor} type="material-community"/>
       )
     }
   },

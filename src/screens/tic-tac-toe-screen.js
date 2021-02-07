@@ -93,8 +93,8 @@ const styles = {
   },
   square: {
     backgroundColor: 'white',
-    width: boardSize / 3.45,
-    height: boardSize / 3.45,
+    width: boardSize / 3.6,
+    height: boardSize / 3.6,
     margin: 8,
     alignItems: 'center',
     justifyContent: 'center'
