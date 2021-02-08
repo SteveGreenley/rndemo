@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { View, Text, Image } from 'react-native';
 import { ListItem, Input } from 'react-native-elements';
 import Animated from 'react-native-reanimated';
@@ -10,6 +10,9 @@ const HEADER_SCROLL_DISTANCE = HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT;
 
 const NiceFormScreen = ({ navigation }) => {
   const [scrollY] = useState(new Animated.Value(0));
+  const nameField = useRef();
+  const emailField = useRef();
+
   const headerHeight = scrollY.interpolate({
     inputRange: [0, HEADER_SCROLL_DISTANCE],
     outputRange: [HEADER_MAX_HEIGHT, HEADER_MIN_HEIGHT],
@@ -31,21 +34,32 @@ const NiceFormScreen = ({ navigation }) => {
           marginTop: HEADER_MAX_HEIGHT
         }}
       >
-        <ListItem bottomDivider>
-          <ListItem.Input
-            style={{ textAlign:'left' }}
+        <ListItem>
+          <Input
+            refInput={nameField}
+            // style={{ textAlign:'left' }}
             label="Name"
             placeholder="Your full name"
             leftIcon={{ name: 'person' }}
+            autoCapitalize="words"
+            autoCorrect={false}
+            returnKeyType="next"
+            onSubmitEditing={()=>{
+              emailField.current.focus();
+            }}
           />
         </ListItem>
 
-        <ListItem bottomDivider>
-          <ListItem.Input
-            style={{ textAlign:'left' }}
+        <ListItem>
+          <Input
+            ref={emailField}
+            // style={{ textAlign:'left' }}
             label="Email"
             placeholder="Email address"
             leftIcon={{ name: 'email', type: 'material-community' }}
+            keyboardType="email-address"
+            autoCapitalize="none"
+            autoCorrect={false}
           />
         </ListItem>
 
