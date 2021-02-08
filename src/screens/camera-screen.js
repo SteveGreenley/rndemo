@@ -6,13 +6,12 @@ import { RNCamera } from 'react-native-camera';
 import Permissions from 'react-native-permissions';
 import CameraRoll from '@react-native-community/cameraroll';
 import { accelerometer } from 'react-native-sensors';
-
-const dp = n => Math.round(n);
+import { useDeviceOrientation } from '@react-native-community/hooks';
 
 const calcRotation = ({ x,y,z }) => {
-  const pitch = Math.atan2(-x, -z) * 180 / Math.PI;// In degrees
-  const roll = Math.atan2(-y, -x) * 180 / Math.PI;// In degrees
-  const yaw = Math.atan2(y, -z) * 180 / Math.PI;// In degrees
+  const pitch = Math.round(Math.atan2(-x, -z) * 180 / Math.PI);// In degrees
+  const roll = Math.round(Math.atan2(-y, -x) * 180 / Math.PI);// In degrees
+  const yaw = Math.round(Math.atan2(y, -z) * 180 / Math.PI);// In degrees
   return { pitch, roll, yaw };
 };
 
@@ -20,6 +19,7 @@ const CameraScreen = () => {
   const [cameraPermission, setCameraPermission] = useState(false);
   const [, setAccelerometerValues] = useState(null);
   const [rotationValues, setRotationValues] = useState(null);
+  const orientation = useDeviceOrientation();
   const cameraRef = useRef();
   useEffect(()=>{
     Permissions.request('camera', { type: 'always' }).then(response => {
@@ -32,10 +32,14 @@ const CameraScreen = () => {
       //console.log('x=',x, 'y=',y, 'z=',z);
       setAccelerometerValues({ x,y,z });
       setRotationValues(calcRotation({ x,y,z }));
+    },(error)=> {
+      console.log('!!! Error', error);
     });
-    return ()=>{
+    return () => {
       //console.log('unmount');
-      accelerometerSubscription.unsubscribe();
+      if (accelerometerSubscription) {
+        accelerometerSubscription.unsubscribe();
+      }
     };
   },[]);
   return (
@@ -66,12 +70,25 @@ const CameraScreen = () => {
           style={styles.overlay}
         >
           {rotationValues && (
-            <>
-              <Text style={{ color:'white' }}>{`pitch=${dp(rotationValues.pitch)}`}</Text>
-              <Text style={{ color:'white' }}>{`roll=${dp(rotationValues.roll)}`}</Text>
-              <Text style={{ color:'white' }}>{`yaw=${dp(rotationValues.yaw)}`}</Text>
-            </>
+            <View
+              style={{
+                flex: 1,
+                backgroundColor: 'transparent',
+                transform: [
+                  { rotate: `${(orientation.portrait ? 90 : 0 ) - rotationValues.roll}deg` }
+                ]
+              }}
+            >
+              <View style={{ flex: 1 }}/>
+              <View style={{ height: 2, backgroundColor: 'white' }}/>
+              <View style={{ flex: 1 }}/>
+            </View>
           )}
+        </View>
+        <View
+          style={{ ...styles.overlay, ...styles.content }}
+        >
+
           <Button
             title="Take a photo"
             icon={{ name: 'camera', color: 'white' }}
@@ -94,12 +111,6 @@ const styles = {
     // alignItems: 'center',
     backgroundColor: 'blue'
   },
-  content: {
-    backgroundColor: 'hotpink',
-    padding: 30,
-    margin: 10,
-    borderRadius: 10
-  },
   preview: {
     backgroundColor: 'green',
     flex: 1,
@@ -110,6 +121,8 @@ const styles = {
     position: 'absolute',
     left: 0, right: 0,
     top: 0, bottom: 0,
+  },
+  content: {
     justifyContent: 'flex-end',
     padding: 20
   }
