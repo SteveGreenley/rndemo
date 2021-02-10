@@ -80,7 +80,7 @@ const CameraScreen = () => {
               }}
             >
               <View style={{ flex: 1 }}/>
-              <View style={{ height: 2, backgroundColor: 'white' }}/>
+              <View style={{ height: 2, backgroundColor: rotationValues.roll === 0 || rotationValues.roll === 90 ? 'limegreen' : 'grey' }} />
               <View style={{ flex: 1 }}/>
             </View>
           )}
