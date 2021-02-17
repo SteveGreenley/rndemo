@@ -1,0 +1,2 @@
+androidx/lifecycle/ProcessLifecycleOwner.class
+androidx/lifecycle/LifecycleObserver.class

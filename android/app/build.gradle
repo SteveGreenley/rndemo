@@ -135,6 +135,8 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        missingDimensionStrategy 'react-native-camera', 'general'
+        multiDexEnabled true
     }
     splits {
         abi {
@@ -154,15 +156,21 @@ android {
     }
     buildTypes {
         debug {
+            multiDexKeepFile file('multidex-config.txt')
             signingConfig signingConfigs.debug
         }
         release {
+            multiDexKeepFile file('multidex-config.txt')
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
     }
 
     // applicationVariants are e.g. debug, release
