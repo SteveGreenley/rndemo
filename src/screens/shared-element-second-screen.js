@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, Button, Image, ScrollView, Dimensions } from 'react-native';
-import {SharedElement} from 'react-navigation-shared-element';
+import { View, Text, Image, Dimensions } from 'react-native';
+import { SharedElement } from 'react-navigation-shared-element';
 
 const { width: windowWidth } = Dimensions.get('window');
 
@@ -11,7 +11,7 @@ const SharedElementSecondScreen = (props) => {
         flex: 1,
         justifyContent: 'flex-start',
         alignItems: 'center',
-        backgroundColor: 'hotpink'
+        // backgroundColor: 'hotpink'
       }}>
         <SharedElement id="image">
           <Image
@@ -28,7 +28,7 @@ const SharedElementSecondScreen = (props) => {
             flex: 1,
             justifyContent: 'space-between',
             alignItems: 'center',
-            backgroundColor: 'cyan'
+            // backgroundColor: 'cyan'
           }}
         >
           <Text>TOP</Text>
@@ -41,7 +41,7 @@ const SharedElementSecondScreen = (props) => {
 };
 
 SharedElementSecondScreen.sharedElements = (navigation, otherNavigation, showing) => {
-  return ["image"];
+  return ['image'];
 };
 
 const styles = {
@@ -49,7 +49,7 @@ const styles = {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'flex-start',
-    backgroundColor: 'green'
+    // backgroundColor: 'green'
   },
   content: {
     flex: 1,
