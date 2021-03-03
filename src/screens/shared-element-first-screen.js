@@ -16,7 +16,8 @@ const SharedElementFirstScreen = (props) => {
             resizeMode="contain"
             style={{
               width: 300,
-              height: 200
+              height: 200,
+              borderRadius: 15
             }}
           />
         </SharedElement>
