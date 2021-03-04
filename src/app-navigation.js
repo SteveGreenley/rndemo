@@ -16,10 +16,16 @@ import { CardStyleInterpolators } from 'react-navigation-stack';
 
 const SharedElementStackNavigator = createSharedElementStackNavigator({
   'Shared 1': {
-    screen: SharedElementFirstScreen
+    screen: SharedElementFirstScreen,
+    navigationOptions: {
+      headerShown: false
+    }
   },
   'Shared 2': {
-    screen: SharedElementSecondScreen
+    screen: SharedElementSecondScreen,
+    navigationOptions: {
+      headerShown: false
+    }
   }
 },{
   defaultNavigationOptions: {

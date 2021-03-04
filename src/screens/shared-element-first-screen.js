@@ -26,6 +26,9 @@ const SharedElementFirstScreen = (props) => {
     </View>
   );
 };
+SharedElementFirstScreen.sharedElements = (navigation, otherNavigation, showing) => {
+  return ['image'];
+};
 
 const styles = {
   container: {
