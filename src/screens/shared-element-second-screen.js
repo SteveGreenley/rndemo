@@ -1,8 +1,11 @@
-import React, { useEffect, useRef } from 'react';
-import { View, Text, StyleSheet, Dimensions, Animated, SafeAreaView } from 'react-native';
+import React, { useRef } from 'react';
+import { View, Text, StyleSheet, Dimensions, SafeAreaView } from 'react-native';
 import { SharedElement } from 'react-navigation-shared-element';
 import { Icon } from 'react-native-elements';
 import { useNavigation } from 'react-navigation-hooks';
+import Animated from 'react-native-reanimated';
+import { onScrollEvent } from 'react-native-redash/lib/module/v1';
+
 const { width, height } = Dimensions.get('window');
 
 const headerHeight = height / 3;
@@ -10,58 +13,32 @@ const headerHeight = height / 3;
 const SharedElementSecondScreen = (props) => {
   const { goBack } = useNavigation();
   const scrollY = useRef(new Animated.Value(0)).current;
-  const scale = useRef(new Animated.Value(1)).current;
-  const borderRadius = useRef(new Animated.Value(0)).current;
-  const closeButtonOpacity = useRef(new Animated.Value(1)).current;
 
-  useEffect(()=>{
-    Animated.timing(scale, {
-      duration: 0,
-      useNativeDriver: true,
-      toValue: scrollY.interpolate({
-        inputRange: [-50,0],
-        outputRange: [0.9, 1],
-        extrapolate: 'clamp'
-      })
-    }).start();
-
-    Animated.timing(borderRadius, {
-      duration: 0,
-      useNativeDriver: true,
-      toValue: scrollY.interpolate({
-        inputRange: [-50,0],
-        outputRange: [15, 0],
-        extrapolate: 'clamp'
-      })
-    }).start();
-
-    Animated.timing(closeButtonOpacity, {
-      duration: 0,
-      useNativeDriver: true,
-      toValue: scrollY.interpolate({
-        inputRange: [-20,0],
-        outputRange: [0,1],
-        extrapolate: 'clamp'
-      })
-    }).start();
-
-  },[
-    scale, scrollY, borderRadius, closeButtonOpacity,
-  ]);
+  const scale = scrollY.interpolate({
+    inputRange: [-50,0],
+    outputRange: [0.9, 1],
+    extrapolate: 'clamp'
+  });
+  const borderRadius = scrollY.interpolate({
+    inputRange: [-50,0],
+    outputRange: [15, 0],
+    extrapolate: 'clamp'
+  });
+  const closeButtonOpacity = scrollY.interpolate({
+    inputRange: [-20,0],
+    outputRange: [0,1],
+    extrapolate: 'clamp'
+  });
 
   return (
     <View style={styles.container}>
       <Animated.ScrollView
-        //scrollEventThrottle={16}
+        scrollEventThrottle={16}
         showsVerticalScrollIndicator={false}
-        onScroll={Animated.event(
-          [{ nativeEvent: { contentOffset: { y: scrollY } } }],
-          { useNativeDriver: true },
-        )}
+        onScroll = {onScrollEvent({ y: scrollY })}
         style={{
           ...styles.overlay,
-          //backgroundColor: 'lightgrey',
-          transform: [{ scale }],
+          transform: [{ scale:scale }],
           borderRadius,
         }}
         contentContainerStyle={{
@@ -85,6 +62,7 @@ const SharedElementSecondScreen = (props) => {
               />
             </View>
           </SharedElement>
+
           <Text>SharedElementSecondScreen</Text>
           <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a massa vulputate, convallis augue eget, volutpat nisl. Fusce quam arcu, tincidunt et orci eget, efficitur finibus erat. Ut ut mollis lacus, vel semper magna. Proin a tempus dolor, vitae vestibulum tellus. Mauris sit amet elementum ex. Curabitur ultricies congue urna, quis dignissim risus auctor ultricies. Ut at magna non magna elementum mattis in at ex. Duis lorem arcu, aliquet quis dignissim eu, gravida quis tortor. Sed porttitor fermentum sem, elementum dapibus felis suscipit nec. Fusce nisi mi, aliquam gravida efficitur vel, vestibulum nec lorem.</Text>
           <Text>Proin eu semper lectus. Quisque egestas dignissim tellus, volutpat hendrerit turpis aliquam id. Etiam non efficitur ipsum. Pellentesque dignissim est at suscipit feugiat. Nullam ultricies suscipit tempor. Vestibulum vitae metus nec metus interdum bibendum id ac velit. Proin non ultricies quam. Morbi volutpat elit vel metus mattis, ut finibus mi sollicitudin. Suspendisse potenti. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam laoreet nec ante sed eleifend. Quisque non ligula tempus, volutpat urna in, pulvinar felis. Proin arcu mauris, viverra vitae interdum vitae, pretium non erat.</Text>
