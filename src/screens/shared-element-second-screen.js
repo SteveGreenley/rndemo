@@ -1,9 +1,9 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { View, Text, StyleSheet, Dimensions, SafeAreaView } from 'react-native';
 import { SharedElement } from 'react-navigation-shared-element';
 import { Icon } from 'react-native-elements';
 import { useNavigation } from 'react-navigation-hooks';
-import Animated from 'react-native-reanimated';
+import Animated, { useValue } from 'react-native-reanimated';
 import { onScrollEvent } from 'react-native-redash/lib/module/v1';
 
 const { width, height } = Dimensions.get('window');
@@ -12,7 +12,7 @@ const headerHeight = height / 3;
 
 const SharedElementSecondScreen = (props) => {
   const { goBack } = useNavigation();
-  const scrollY = useRef(new Animated.Value(0)).current;
+  const scrollY = useValue(0);
 
   const scale = scrollY.interpolate({
     inputRange: [-50,0],
