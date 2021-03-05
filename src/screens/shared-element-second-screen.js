@@ -7,6 +7,7 @@ import Animated, {
   useCode, block, lessThan, cond, set, call
 } from 'react-native-reanimated';
 import { onScrollEvent, useValues } from 'react-native-redash/lib/module/v1';
+import TouchableScale from 'react-native-touchable-scale';
 
 const { width, height } = Dimensions.get('window');
 
@@ -113,6 +114,7 @@ const SharedElementSecondScreen = (props) => {
             onPress={()=>{
               goBack();
             }}
+            Component={TouchableScale}
           />
         </Animated.View>
       </SafeAreaView>

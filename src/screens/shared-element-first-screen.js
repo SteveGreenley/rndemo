@@ -1,11 +1,13 @@
 import React from 'react';
 import { View, Text, Button, Image, TouchableOpacity } from 'react-native';
 import { SharedElement } from 'react-navigation-shared-element';
+import TouchableScale from 'react-native-touchable-scale';
 
 const SharedElementFirstScreen = (props) => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity
+      <TouchableScale
+        // activeScale={0.95}
         onPress={() => {
           props.navigation.navigate('Shared 2');
         }}
@@ -21,7 +23,7 @@ const SharedElementFirstScreen = (props) => {
             }}
           />
         </SharedElement>
-      </TouchableOpacity>
+      </TouchableScale>
       <Text>Tap the image!</Text>
     </View>
   );
