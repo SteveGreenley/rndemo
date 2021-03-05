@@ -3,24 +3,40 @@ import { View, Text, StyleSheet, Dimensions, SafeAreaView } from 'react-native';
 import { SharedElement } from 'react-navigation-shared-element';
 import { Icon } from 'react-native-elements';
 import { useNavigation } from 'react-navigation-hooks';
-import Animated, { useValue } from 'react-native-reanimated';
-import { onScrollEvent } from 'react-native-redash/lib/module/v1';
+import Animated, {
+  useCode, block, lessThan, cond, set, call
+} from 'react-native-reanimated';
+import { onScrollEvent, useValues } from 'react-native-redash/lib/module/v1';
 
 const { width, height } = Dimensions.get('window');
 
 const headerHeight = height / 3;
+const PULL_DOWN_TRIGGER_VALUE = 50;
 
 const SharedElementSecondScreen = (props) => {
   const { goBack } = useNavigation();
-  const scrollY = useValue(0);
+  const [scrollY, backTriggered] = useValues(0, 0);
+  useCode(() =>
+    block([
+      cond(
+        lessThan(scrollY, -PULL_DOWN_TRIGGER_VALUE),
+        set(backTriggered, 1)
+      ),
+      cond(
+        backTriggered,
+        call([], () => goBack())
+      )
+    ]),
+  [scrollY, backTriggered]
+  );
 
   const scale = scrollY.interpolate({
-    inputRange: [-50,0],
+    inputRange: [-PULL_DOWN_TRIGGER_VALUE,0],
     outputRange: [0.9, 1],
     extrapolate: 'clamp'
   });
   const borderRadius = scrollY.interpolate({
-    inputRange: [-50,0],
+    inputRange: [-PULL_DOWN_TRIGGER_VALUE,0],
     outputRange: [15, 0],
     extrapolate: 'clamp'
   });
