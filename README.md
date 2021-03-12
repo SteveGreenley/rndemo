@@ -1,4 +1,7 @@
 # rndemo
+
+![Screenshot 1](screenshots/Simulator Screen Shot - iPhone 12 Pro Max - 2021-03-12 at 15.30.57.png)
+
 Demo application presented for realestate.co.nz on 29th Jan 2021
 
 Placeholder instructions for those interested in playing with this demo app. I'll add to these based on feedback.
