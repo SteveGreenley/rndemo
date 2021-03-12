@@ -1,6 +1,6 @@
 # rndemo
 
-![Screenshot 1](https://raw.githubusercontent.com/SteveGreenley/rndemo/6eaf5348439a648c037b153ff1d00d0948c90799/screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2012%20Pro%20Max%20-%202021-03-12%20at%2015.30.57.png)
+![Screenshot 1](https://raw.githubusercontent.com/SteveGreenley/rndemo/6eaf5348439a648c037b153ff1d00d0948c90799/screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2012%20Pro%20Max%20-%202021-03-12%20at%2015.30.57.png =250x)
 
 Demo application presented for realestate.co.nz on 29th Jan 2021
 
