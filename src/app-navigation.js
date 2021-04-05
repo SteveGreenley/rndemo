@@ -1,7 +1,7 @@
 import React from 'react';
 import { createAppContainer } from 'react-navigation';
 import { createMaterialTopTabNavigator } from 'react-navigation-tabs';
-import { createMaterialBottomTabNavigator, TabBarTop } from 'react-navigation-material-bottom-tabs';
+import { TabBarTop } from 'react-navigation-material-bottom-tabs';
 import { createStackNavigator } from 'react-navigation-stack';
 import { Icon } from 'react-native-elements';
 import { createSharedElementStackNavigator } from 'react-navigation-shared-element';
@@ -17,6 +17,8 @@ import SharedElementSecondScreen from './screens/shared-element-second-screen';
 import PlayScreen from './screens/play-screen';
 import ListScreen from './screens/list-screen';
 import DetailScreen from './screens/detail-screen';
+import BarCharScreen from './screens/bar-chart-screen';
+import BarChartScreen from './screens/bar-chart-screen';
 
 const SharedElementStackNavigator = createSharedElementStackNavigator({
   'Shared 1': {
@@ -116,6 +118,14 @@ const TabNavigator = createMaterialTopTabNavigator({
     navigationOptions: {
       tabBarIcon: ({ tintColor }) => (
         <Icon name="format-list-bulleted" color={tintColor} type="material-community"/>
+      )
+    }
+  },
+  'BarChart': {
+    screen: BarChartScreen,
+    navigationOptions: {
+      tabBarIcon: ({ tintColor }) => (
+        <Icon name="bar-chart" color={tintColor} type="material"/>
       )
     }
   }
