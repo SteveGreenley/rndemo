@@ -1,13 +1,29 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image, StyleSheet } from 'react-native';
 import { useNavigation } from 'react-navigation-hooks';
+import { useDimensions } from '@react-native-community/hooks';
 
 const DetailScreen = (props) => {
   const { getParam } = useNavigation();
-  const item = getParam('item');
+  const name = getParam('name');
+  const imageUrl = getParam('imageUrl');
+  const { width, height } = useDimensions().window;
+
+  console.log('!!! imageUrl',imageUrl);
   return (
     <View style={styles.container}>
-      <Text style={styles.itemText}>{item}</Text>
+      <View style={StyleSheet.absoluteFill}>
+        <Image
+          style={{ width, height  }}
+          source={{ uri: imageUrl }}
+          resizeMode="cover"
+        />
+      </View>
+      <View style={{ ...StyleSheet.absoluteFill, justifyContent: 'flex-end' }}>
+        <View style={styles.textContainer}>
+          <Text style={styles.itemText}>{name}</Text>
+        </View>
+      </View>
     </View>
   );
 };
@@ -18,8 +34,15 @@ const styles = {
     justifyContent: 'space-around',
     alignItems: 'center'
   },
+  textContainer: {
+    backgroundColor: 'rgba(255,255,255,0.5)',
+    margin: 20,
+    padding: 10,
+    borderRadius: 16,
+    alignItems: 'center'
+  },
   itemText: {
-    fontSize: 40
+    fontSize: 40,
   }
 };
 
