@@ -1,6 +1,7 @@
 import React from 'react';
 import { createAppContainer } from 'react-navigation';
-import { createBottomTabNavigator } from 'react-navigation-tabs';
+import { createMaterialTopTabNavigator } from 'react-navigation-tabs';
+import { createMaterialBottomTabNavigator, TabBarTop } from 'react-navigation-material-bottom-tabs';
 import { createStackNavigator } from 'react-navigation-stack';
 import { Icon } from 'react-native-elements';
 import { createSharedElementStackNavigator } from 'react-navigation-shared-element';
@@ -45,7 +46,7 @@ const StackNav = createStackNavigator({
   }
 });
 
-const TabNavigator = createBottomTabNavigator({
+const TabNavigator = createMaterialTopTabNavigator({
   'Shared': {
     screen: SharedElementStackNavigator,
     navigationOptions: {
@@ -117,6 +118,35 @@ const TabNavigator = createBottomTabNavigator({
         <Icon name="format-list-bulleted" color={tintColor} type="material-community"/>
       )
     }
+  }
+},{
+  initialRouteName: 'Shared',
+  tabBarComponent: TabBarTop,
+  tabBarPosition: 'bottom',
+  tabBarOptions: {
+    activeTintColor: 'blue',
+    inactiveTintColor: 'grey',
+    pressColor: 'white',
+    showIcon: true,
+    swipeEnabled:false,
+    animationEnabled: true,
+    scrollEnabled:true,
+    upperCaseLabel: false,
+    labelStyle: {
+      fontSize: 11
+    },
+    renderIndicator: props => {},
+    style:{
+      backgroundColor: 'whitesmoke'
+    },
+    tabStyle:{
+      paddingHorizontal: 0,
+      width: 70,
+      height: 90,
+      backgroundColor: 'white',
+      borderColor: 'grey',
+      borderTopWidth: 1
+    },
   }
 });
 
