@@ -89,7 +89,8 @@ const styles = {
     flexDirection: 'row',
     flexWrap: 'wrap',
     alignContent: 'center',
-    justifyContent:'center'
+    justifyContent:'center',
+    marginTop: 40
   },
   square: {
     backgroundColor: 'white',
