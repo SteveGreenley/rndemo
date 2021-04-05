@@ -36,7 +36,8 @@ const styles = {
   container: {
     flex: 1,
     justifyContent: 'space-around',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: 'orange'
   }
 };
 

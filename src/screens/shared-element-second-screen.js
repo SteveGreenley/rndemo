@@ -62,6 +62,7 @@ const SharedElementSecondScreen = (props) => {
           backgroundColor: 'white',
           borderTopRightRadius: 15,
           borderTopLeftRadius: 15,
+          paddingBottom: 200,
         }}
       >
         <Animated.View>

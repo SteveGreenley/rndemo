@@ -19,6 +19,7 @@ import ListScreen from './screens/list-screen';
 import DetailScreen from './screens/detail-screen';
 import BarCharScreen from './screens/bar-chart-screen';
 import BarChartScreen from './screens/bar-chart-screen';
+import { TouchableWithoutFeedback } from 'react-native';
 
 const SharedElementStackNavigator = createSharedElementStackNavigator({
   'Shared 1': {
@@ -35,7 +36,10 @@ const SharedElementStackNavigator = createSharedElementStackNavigator({
   }
 },{
   defaultNavigationOptions: {
-    cardStyleInterpolator: CardStyleInterpolators.forFadeFromBottomAndroid
+    cardStyleInterpolator: CardStyleInterpolators.forFadeFromBottomAndroid,
+    cardStyle: {
+      backgroundColor: 'transparent'
+    }
   }
 });
 
@@ -48,91 +52,78 @@ const StackNav = createStackNavigator({
   }
 });
 
+const tabBarIcon = ({ name, type = 'material-community' }) => ({ tintColor, focused, horizontal }) => (
+  <Icon name={name} type={type} color={tintColor}/>
+);
+
 const TabNavigator = createMaterialTopTabNavigator({
   'Shared': {
     screen: SharedElementStackNavigator,
     navigationOptions: {
-      tabBarIcon: ({ tintColor }) => (
-        <Icon name="content-copy" type="material" color={tintColor} />
-      )
+      tabBarIcon: tabBarIcon({ name: 'content-copy', type: 'material' }),
     }
   },
   'Animation': {
     screen: SimpleAnimationScreen,
     navigationOptions: {
-      tabBarIcon: ({ tintColor }) => (
-        <Icon name="movie-open" color={tintColor} type="material-community"/>
-      )
+      tabBarIcon: tabBarIcon({ name: 'movie-open' })
     }
   },
   'Norris': {
     screen: ChuckNorrisScreen,
     navigationOptions: {
-      tabBarIcon: ({ tintColor }) => (
-        <Icon name="api" color={tintColor} type="material-community"/>
-      )
+      tabBarIcon: tabBarIcon({ name: 'api' })
     }
   },
   'OXO': {
     screen: TicTacToeScreen,
     navigationOptions: {
-      tabBarIcon: ({ tintColor }) => (
-        <Icon name="nintendo-game-boy" color={tintColor} type="material-community"/>
-      )
+      tabBarIcon: tabBarIcon({ name: 'nintendo-game-boy' })
     }
   },
   'Form': {
     screen: NiceFormScreen,
     navigationOptions: {
-      tabBarIcon: ({ tintColor }) => (
-        <Icon name="form" color={tintColor} type="ant-design"/>
-      )
+      tabBarIcon: tabBarIcon({ name: 'form', type: 'ant-design' })
     }
   },
   'Map': {
     screen: MapScreen,
     navigationOptions: {
-      tabBarIcon: ({ tintColor }) => (
-        <Icon name="world-o" color={tintColor} type="fontisto"/>
-      )
+      tabBarIcon: tabBarIcon({ name: 'world-o', type: 'fontisto' })
     }
   },
   'Camera': {
     screen: CameraScreen,
     navigationOptions: {
-      tabBarIcon: ({ tintColor }) => (
-        <Icon name="camera" color={tintColor} type="material-community"/>
-      )
+      tabBarIcon: tabBarIcon({ name: 'camera' })
     }
   },
   'Play': {
     screen: PlayScreen,
     navigationOptions: {
-      tabBarIcon: ({ tintColor }) => (
-        <Icon name="sony-playstation" color={tintColor} type="material-community"/>
-      )
+      tabBarIcon: tabBarIcon({ name: 'sony-playstation' })
     }
   },
   'Nav': {
     screen: StackNav,
     navigationOptions: {
-      tabBarIcon: ({ tintColor }) => (
-        <Icon name="format-list-bulleted" color={tintColor} type="material-community"/>
-      )
+      tabBarIcon: tabBarIcon({ name: 'format-list-bulleted' })
     }
   },
   'BarChart': {
     screen: BarChartScreen,
     navigationOptions: {
-      tabBarIcon: ({ tintColor }) => (
-        <Icon name="bar-chart" color={tintColor} type="material"/>
-      )
+      tabBarIcon: tabBarIcon({ name: 'bar-chart', type: 'material' })
     }
   }
 },{
   initialRouteName: 'Shared',
   tabBarComponent: TabBarTop,
   tabBarPosition: 'bottom',
+  defaultNavigationOptions: {
+    tabBarButtonComponent: TouchableWithoutFeedback
+  },
   tabBarOptions: {
     activeTintColor: 'blue',
     inactiveTintColor: 'grey',
@@ -147,15 +138,15 @@ const TabNavigator = createMaterialTopTabNavigator({
     },
     renderIndicator: props => {},
     style:{
-      backgroundColor: 'whitesmoke'
+      backgroundColor: 'white',
+      borderColor: 'grey',
+      borderTopWidth: 1,
     },
     tabStyle:{
       paddingHorizontal: 0,
-      width: 70,
+      width: 90,
       height: 90,
       backgroundColor: 'white',
-      borderColor: 'grey',
-      borderTopWidth: 1
     },
   }
 });
