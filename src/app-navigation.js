@@ -17,7 +17,6 @@ import SharedElementSecondScreen from './screens/shared-element-second-screen';
 import PlayScreen from './screens/play-screen';
 import ListScreen from './screens/list-screen';
 import DetailScreen from './screens/detail-screen';
-import BarCharScreen from './screens/bar-chart-screen';
 import BarChartScreen from './screens/bar-chart-screen';
 import { TouchableWithoutFeedback } from 'react-native';
 
@@ -45,7 +44,10 @@ const SharedElementStackNavigator = createSharedElementStackNavigator({
 
 const StackNav = createStackNavigator({
   'List': {
-    screen: ListScreen
+    screen: ListScreen,
+    navigationOptions: {
+      title: 'Star Wars Movie Posters'
+    }
   },
   'Detail': {
     screen: DetailScreen

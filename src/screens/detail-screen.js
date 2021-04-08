@@ -5,34 +5,31 @@ import { useDimensions } from '@react-native-community/hooks';
 
 const DetailScreen = (props) => {
   const { getParam } = useNavigation();
-  const name = getParam('name');
   const imageUrl = getParam('imageUrl');
-  const { width, height } = useDimensions().window;
+  const { width } = useDimensions().window;
 
   console.log('!!! imageUrl',imageUrl);
   return (
     <View style={styles.container}>
-      <View style={StyleSheet.absoluteFill}>
-        <Image
-          style={{ width, height  }}
-          source={{ uri: imageUrl }}
-          resizeMode="cover"
-        />
-      </View>
-      <View style={{ ...StyleSheet.absoluteFill, justifyContent: 'flex-end' }}>
-        <View style={styles.textContainer}>
-          <Text style={styles.itemText}>{name}</Text>
-        </View>
-      </View>
+      <Image
+        style={{ width, height: null, flex: 1 }}
+        source={{ uri: imageUrl }}
+        resizeMode="contain"
+      />
     </View>
   );
 };
 
+DetailScreen.navigationOptions = ({ navigation }) => ({
+  title: navigation.getParam('name')
+});
+
 const styles = {
   container: {
     flex: 1,
-    justifyContent: 'space-around',
-    alignItems: 'center'
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    backgroundColor: 'white'
   },
   textContainer: {
     backgroundColor: 'rgba(255,255,255,0.5)',

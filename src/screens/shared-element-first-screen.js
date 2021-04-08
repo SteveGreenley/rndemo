@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button, Image, TouchableOpacity } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import { SharedElement } from 'react-navigation-shared-element';
 import TouchableScale from 'react-native-touchable-scale';
 

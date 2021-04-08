@@ -7,15 +7,15 @@ import { useNavigation } from 'react-navigation-hooks';
 const { width } = Dimensions.get('window');
 
 const items = [
-  { name: 'Mary', imageUrl: 'https://static.wikia.nocookie.net/disney/images/5/5c/Mary_Poppins_-_Julie_Andrews.jpg/revision/latest?cb=20160212083150' },
-  { name: 'Patricia', imageUrl: 'https://www.celebrityspeakersbureau.com/wp-content/uploads/2015/03/Patricia-Arquette.jpg' },
-  { name: 'Jennifer', imageUrl: 'https://www.celebrityspeakersbureau.com/wp-content/uploads/2013/06/jennifer-aniston.jpg' },
-  { name: 'Linda', imageUrl: 'https://www.thewrap.com/wp-content/uploads/2018/08/linda.jpg' },
-  { name: 'Elizabeth', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/0d/Queen_Elizabeth_II_of_New_Zealand_%28cropped%29.jpg' },
-  { name: 'Barbara', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/80/Barbara_Windsor_Maryebone_Tree.JPG' },
-  { name: 'Susan', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a1/Susan_Sarandon%2C_Festival_de_Sitges_2017_%28cropped%29.jpg' },
-  { name: 'Jessica', imageUrl: 'https://www.indiewire.com/wp-content/uploads/2021/03/AP21084701999083.jpg?w=780' },
-  { name: 'Sarah', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Sarah_Silverman_DNC_July_2016.jpg/220px-Sarah_Silverman_DNC_July_2016.jpg' },
+  { name: 'Star Wars', imageUrl: 'https://d2j1wkp1bavyfs.cloudfront.net/wp-content/uploads/2018/07/01054422/7169497.jpg?q=50' },
+  { name: 'Rogue One', imageUrl: 'https://d2j1wkp1bavyfs.cloudfront.net/wp-content/uploads/2018/07/01054420/7169493.jpg?q=50' },
+  { name: 'The Phantom Menace', imageUrl: 'https://d2j1wkp1bavyfs.cloudfront.net/wp-content/uploads/2018/07/01054417/7169488.jpg?q=50' },
+  { name: 'Attack of the Clones', imageUrl: 'https://d2j1wkp1bavyfs.cloudfront.net/wp-content/uploads/2018/07/01054412/7169477.jpg?q=50' },
+  { name: 'The Force Awakens', imageUrl: 'https://d2j1wkp1bavyfs.cloudfront.net/wp-content/uploads/2018/07/01054415/7169481.jpg?q=50' },
+  { name: 'The Last Jedi', imageUrl: 'https://d2j1wkp1bavyfs.cloudfront.net/wp-content/uploads/2018/07/01054442/7172927.jpg?q=50' },
+  { name: 'Revenge of the Jedi', imageUrl: 'https://d2j1wkp1bavyfs.cloudfront.net/wp-content/uploads/2018/07/01054418/7169490.jpg?q=50' },
+  { name: 'The Empire Strikes Back', imageUrl: 'https://d2j1wkp1bavyfs.cloudfront.net/wp-content/uploads/2018/07/01054414/7169480.jpg?q=50' },
+  { name: 'A New Hope', imageUrl: 'https://d2j1wkp1bavyfs.cloudfront.net/wp-content/uploads/2018/07/01054422/7169498.jpg?q=50' },
 ];
 
 const ListScreen = (props) => {
