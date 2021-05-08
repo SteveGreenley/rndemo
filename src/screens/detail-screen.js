@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, ActivityIndicator } from 'react-native';
+import { Image } from 'react-native-elements';
 import { useNavigation } from 'react-navigation-hooks';
 import { useDimensions } from '@react-native-community/hooks';
 
@@ -15,6 +16,7 @@ const DetailScreen = (props) => {
         style={{ width, height: null, flex: 1 }}
         source={{ uri: imageUrl }}
         resizeMode="contain"
+        PlaceholderContent={<ActivityIndicator size="large"/>}
       />
     </View>
   );
