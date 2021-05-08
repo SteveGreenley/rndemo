@@ -186,7 +186,6 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				053565874F141A918BC9A5C3 /* [CP] Copy Pods Resources */,
-				4EA54CECEE22B49BC7242C93 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -323,24 +322,6 @@
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-rndemo/Pods-rndemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4EA54CECEE22B49BC7242C93 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-rndemo/Pods-rndemo-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL/OpenSSL.framework/OpenSSL",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenSSL.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-rndemo/Pods-rndemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B42B8455D19CDD958CB37CB2 /* [CP] Check Pods Manifest.lock */ = {
