@@ -20,7 +20,7 @@ const SimpleAnimationScreen = () => {
           <Text>Hello this is the first screen</Text>
         </View>
         <Button
-          title="Press me!"
+          title="Press me please!"
           onPress={()=>{
             LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
             setButtonPress(!buttonPressed);

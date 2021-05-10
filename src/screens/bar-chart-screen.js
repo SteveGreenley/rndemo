@@ -16,7 +16,6 @@ const maxDollarValue = dummyWeeklyData
 const BarChartScreen = (props) => {
   const [containerHeight, setContainerHeight] = useState(1);
   const scaleFactor = 0.8 * containerHeight / maxDollarValue;
-  console.log('!!! scaleFactor', scaleFactor);
   return (
     <View
       style={styles.container}

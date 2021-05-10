@@ -50,7 +50,6 @@ const styles = {
     alignItems: 'flex-start',
   },
   listItem: {
-    // backgroundColor:'green',
     height: 50,
     paddingLeft:20,
     width,

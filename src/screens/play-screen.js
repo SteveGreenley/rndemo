@@ -1,18 +1,10 @@
-import React, { useState } from 'react';
-import { View, Text, Button } from 'react-native';
+import React from 'react';
+import { View, Text } from 'react-native';
 
 const NewComponentName = (props) => {
-  const [pressed, setPressed] = useState(false);
   return (
     <View style={styles.container}>
       <Text>NewComponentName</Text>
-      <Text>{pressed ? 'PRESS' : 'NOT PRESSED'}</Text>
-      <Button
-        title="PRESS ME"
-        onPress={()=>{
-          setPressed(!pressed);
-        }}
-      />
     </View>
   );
 };
@@ -20,7 +12,7 @@ const NewComponentName = (props) => {
 const styles = {
   container: {
     flex: 1,
-    justifyContent: 'space-around',
+    justifyContent: 'center',
     alignItems: 'center'
   }
 };
