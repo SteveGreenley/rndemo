@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text } from 'react-native';
+import { Button } from 'react-native-elements';
 
-const NewComponentName = (props) => {
+const PlayScreen = (props) => {
+  const [pressed, setPressed] = useState(false);
   return (
-    <View style={styles.container}>
-      <Text>NewComponentName</Text>
+    <View style={{ ...styles.container, backgroundColor: pressed ? 'hotpink' : 'yellow' }}>
+      <Text>PlayScreen</Text>
+      <Text>{`Pressed: ${pressed}`}</Text>
+      <Button
+        title="Press me!"
+        onPress={()=>{
+          setPressed(!pressed);
+        }}
+      />
     </View>
   );
 };
@@ -12,9 +21,10 @@ const NewComponentName = (props) => {
 const styles = {
   container: {
     flex: 1,
-    justifyContent: 'center',
+    backgroundColor:'yellow',
+    justifyContent: 'space-around',
     alignItems: 'center'
   }
 };
 
-export default NewComponentName;
+export default PlayScreen;
