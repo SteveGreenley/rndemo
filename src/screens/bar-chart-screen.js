@@ -9,13 +9,9 @@ const dummyWeeklyData = weeklyData
     usageDollars: Math.round(Math.random() * 7000) / 100
   }));
 
-const maxDollarValue = dummyWeeklyData
-  .map(i=>i.usageDollars)
-  .reduce((acc,val)=>Math.max(acc,val));
-
 const BarChartScreen = (props) => {
   const [containerHeight, setContainerHeight] = useState(1);
-  const scaleFactor = 0.8 * containerHeight / maxDollarValue;
+  console.log('!!! containerHeight', containerHeight);
   return (
     <View
       style={styles.container}
@@ -26,7 +22,7 @@ const BarChartScreen = (props) => {
     >
       <BarGraph
         data={dummyWeeklyData}
-        scaleFn={item => (item.usageDollars * scaleFactor)}
+        containerHeight={containerHeight}
       />
     </View>
   );

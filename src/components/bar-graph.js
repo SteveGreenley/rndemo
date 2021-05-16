@@ -1,14 +1,36 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import { View, FlatList, Text } from 'react-native';
 import { AppText } from './app-text';
 import { formatBalanceForBar } from '../lib/utils';
+import { debounce } from 'lodash';
+import { LayoutAnimation } from 'react-native';
 
-const viewabilityConfig = { viewAreaCoveragePercentThreshold: 100 };
+const viewabilityConfig = { viewAreaCoveragePercentThreshold: 1 };
 
 const BarGraph = ({
   data,
-  scaleFn = item => (item.usageDollars)
 }) => {
+  const [maxViewableDollarValue, setMaxViewableDollarValue] = useState(0);
+
+  const debouncedSetMaxViewableDollarValue = useCallback(debounce(
+    (dollarValue) => {
+      LayoutAnimation.easeInEaseOut();
+      setMaxViewableDollarValue(dollarValue);
+    },
+    500
+  ),[]);
+
+  const onViewableItemsChanged = useCallback(({ viewableItems })=>{
+    debouncedSetMaxViewableDollarValue(
+      viewableItems.reduce(
+        (acc,item)=>(
+          Math.max(acc,data[item.index].usageDollars)
+        ), 0)
+    );
+  },[data, debouncedSetMaxViewableDollarValue]);
+
+  const scaleFn = (item) => item.usageDollars * (maxViewableDollarValue ? 600 / maxViewableDollarValue : 1);
+
   return (
     <View style={styles.graph}>
       <FlatList
@@ -18,6 +40,7 @@ const BarGraph = ({
         data={data}
         keyExtractor={item=>(item.label)}
         viewabilityConfig={viewabilityConfig}
+        onViewableItemsChanged={onViewableItemsChanged}
         renderItem={({ item,index,separators }) => {
           const formattedValue = `$${formatBalanceForBar(item.usageDollars)}`;
           const isBarTooSmallForText = scaleFn(item) < 18;
@@ -52,9 +75,11 @@ const BarGraph = ({
                   </Text>
                 )}
               </View>
-              {item.label.split(' ').map((s)=>(
-                <AppText key={s}>{s}</AppText>
-              ))}
+              <View style={{ alignItems: 'center' }}>
+                {item.label.split(' ').map((s)=>(
+                  <AppText key={s}>{s}</AppText>
+                ))}
+              </View>
             </View>
           );
         }}
